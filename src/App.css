@@ -1,0 +1,299 @@
+#body {
+ flex-direction: column;
+ background-color: #022209;
+ justify-content: center;
+ align-items: center;
+ overflow-y: scroll; 
+ flex: 1;
+ display:flex;
+}
+
+#root{
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;  width: 100%;
+  background-color: #fff;
+  flex: 1;
+  flex-direction: column;
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #022209;
+  border-top: 1px solid  #313131;
+}
+
+.footerText {
+  font-family: 'Marck Script', sans-serif; /* Ensure the font is correctly imported or available */
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    color: #DCEB99;
+    padding-left: 20px; /* Converted paddingHorizontal to paddingLeft */
+    padding-right: 20px; 
+}
+
+.title {
+  width: 100%;
+  aspect-ratio: 4000/5784;
+  background-image: url('/src/assets/titlemob.jpg');
+  background-size: contain; /* Slika pokriva celu površinu */
+  background-position: center; /* Centriranje slike */
+}
+
+.date {
+  width: 100%;
+  aspect-ratio: 4000/2599;
+  background-image: url('/src/assets/datumbg.jpg');
+  background-size: contain; /* Slika pokriva celu površinu */
+  background-position: center; /* Centriranje slike */
+}
+
+.restoran {
+  width: 100%;
+  aspect-ratio: 4000/5784;
+  background-image: url('/src/assets/restoran.jpg');
+  background-size: contain; /* Slika pokriva celu površinu */
+  background-position: center; /* Centriranje slike */
+  position: relative;
+}
+
+.mapa {
+  position: absolute;
+  left: 37.35%;
+  top: 40%;
+  width: 25%;
+  height: 15%;
+  cursor: pointer;
+}
+
+
+.formWrapper {
+  width: 100%;
+  max-width: 800px;
+  background-image: url('/src/assets/formabg.jpg');
+  background-size: cover; /* Slika pokriva celu površinu */
+  background-position: center; /* Centriranje slike */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.molba {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: #022209;
+  margin-bottom:20px;
+  padding: 20px 60px 20px 60px;
+  
+}
+
+.molbaWrapper {
+  background-image: url('/src/assets/molbabg.jpg');
+  background-size:cover; /* Slika pokriva celu površinu */ 
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 44px;
+  text-align: center;
+  color: #CDD389;
+  margin-bottom:20px;
+  text-transform: uppercase;
+}
+
+.label {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 12px;
+  color: #CDD389;
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
+.labelGosti {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 10px;
+  color: #CDD389;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
+.radioWrapper {
+  margin-bottom: 4px;
+}
+
+.radio {
+  color: #CDD389;
+  font-weight: 900;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.labelradio {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 14px;
+  color: #CDD389;
+  padding-left: 8px;
+  vertical-align:middle
+}
+
+
+.inputnumber {
+  width: 280px;
+  border:1px solid #CDD389 ;
+  border-radius: 2px;
+  color: #CDD389;
+  background-color: #022209;
+  display: relative;
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 4px 4px 4px 4px;
+}
+
+.optionText {
+  margin-bottom: 20;
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 11px;
+  font-weight: "300";
+  color: #CDD389;
+  padding-left: 2;
+  margin-top: 4px;
+}
+
+.listWrapper {
+  position:absolute;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid #CDD389;
+}
+
+.listItem {
+  background-color: #022209;
+  border-radius: 2px;
+  border-bottom: 0.5px solid #888;
+  padding: 4px 40px 4px 40px;
+  text-align: center;
+  color: #CDD389;
+  font-size: 12px;
+}
+
+.input:focus {
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: #CDD389;
+ outline: none; /* Opcionalno, uklanja plavi outline koji browseri obično dodaju */
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.input {
+  font-size: 14px;
+  width: 280px;
+  border-width: 1px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  color: #CDD389;
+  border-color: #CDD389;
+  background-color: #022209;
+  padding: 4px;
+  font-family: 'Viaoda Libre', sans-serif;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.checkbox {
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: #CDD389;
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitWrapper {
+  width: 280px;
+  border-radius: 2px;
+  border-width: 1px;
+  border-color: #456123; /* Example green */
+  background-color: #DCEB99;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.submit {
+  font-family: 'Viaoda Libre', sans-serif;
+  font-size: 16px;
+  color: #456123;
+}
+
+
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
