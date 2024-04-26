@@ -54,6 +54,23 @@
   background-image: url('/src/assets/titlemob.jpg');
   background-size: contain; /* Slika pokriva celu površinu */
   background-position: center; /* Centriranje slike */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divider {
+  background-color: #022209;
+  width: 100%;
+}
+
+.svatovi {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4000/5784;
+  background-image: url('/src/assets/svatovi.jpg');
+  background-size: contain; /* Slika pokriva celu površinu */
+  background-position: center; /* Centriranje slike */
 }
 
 .date {
@@ -75,10 +92,37 @@
 
 .mapa {
   position: absolute;
-  left: 37.35%;
+  left: 34%;
+  top: 50%;
+  width: 32%;
+  height: 11%;
+  cursor: pointer;
+}
+
+.mapaSr {
+  position: absolute;
+  left: 58%;
   top: 40%;
-  width: 25%;
-  height: 15%;
+  width: 33%;
+  height: 4%;
+  cursor: pointer;
+}
+
+.mapaNp {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  width: 33%;
+  height: 4%;
+  cursor: pointer;
+}
+
+.mapaCr {
+  position: absolute;
+  left: 55%;
+  top: 93%;
+  width: 33%;
+  height: 4%;
   cursor: pointer;
 }
 
@@ -86,7 +130,7 @@
 .formWrapper {
   width: 100%;
   max-width: 800px;
-  background-image: url('/src/assets/formabg.jpg');
+  background-image: url('/src/assets/footerbg.jpg');
   background-size: cover; /* Slika pokriva celu površinu */
   background-position: center; /* Centriranje slike */
   padding-top: 40px;
@@ -105,6 +149,14 @@
   margin-bottom:20px;
   padding: 20px 60px 20px 60px;
   
+}
+
+.poruka {
+  font-family: 'Marck Script', sans-serif;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
 }
 
 .molbaWrapper {
@@ -129,7 +181,7 @@
 
 .label {
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #CDD389;
   margin-bottom: 4px;
   padding-left: 2px;
@@ -137,7 +189,7 @@
 
 .labelGosti {
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   color: #CDD389;
   margin-top: 20px;
   margin-bottom: 4px;
@@ -159,7 +211,7 @@
 
 .labelradio {
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #CDD389;
   padding-left: 8px;
   vertical-align:middle
@@ -174,7 +226,7 @@
   background-color: #022209;
   display: relative;
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   padding: 4px 4px 4px 4px;
 }
@@ -182,7 +234,7 @@
 .optionText {
   margin-bottom: 20;
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: "300";
   color: #CDD389;
   padding-left: 2;
@@ -219,7 +271,7 @@
 }
 
 .input {
-  font-size: 14px;
+  font-size: 16px;
   width: 280px;
   border-width: 1px;
   border-radius: 2px;
@@ -262,7 +314,8 @@
 
 .submit {
   font-family: 'Viaoda Libre', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 900;
   color: #456123;
 }
 

@@ -1,35 +1,34 @@
 /* eslint-disable no-unused-vars */
-import { useState, useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-import intro from './assets/intro.mp3'
+import intro from "./assets/intro.mp3";
 import { collection, setDoc, doc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCUVH2wdT0BETqzmGrJlDOcJi6AIiTsbB4",
-  authDomain: "pozivnica-vm.firebaseapp.com",
-  projectId: "pozivnica-vm",
-  storageBucket: "pozivnica-vm.appspot.com",
-  messagingSenderId: "669091824222",
-  appId: "1:669091824222:web:51dd66ff076e745aefeacf",
-  measurementId: "G-DB0Q3H25JK",
+  apiKey: "AIzaSyDLDEB-Xo8oRepDT3mRKZN5X8ymjHcuHxY",
+  authDomain: "pozivnicavm.firebaseapp.com",
+  projectId: "pozivnicavm",
+  storageBucket: "pozivnicavm.appspot.com",
+  messagingSenderId: "36314673469",
+  appId: "1:36314673469:web:7e2f23c4231fc7858e9554",
+  measurementId: "G-WN8C4C576L",
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 function App() {
-  
   const [name, setName] = useState("");
 
   const [number, setNumber] = useState(0);
-  const [attending, setAttending] = useState(false);
+  const [attending, setAttending] = useState(true);
   const [guests, setGuests] = useState([]);
   const [visible, setVisible] = useState(false);
 
   const gosti = [
-    { value: 0, text: "Само ја" },
+    { value: 0, text: "-" },
     { value: 1, text: "+1" },
     { value: 2, text: "+2" },
     { value: 3, text: "+3" },
@@ -39,8 +38,7 @@ function App() {
 
   const handleSubmit = async () => {
     if (attending) {
-
-      let plus = number > 0 ? number : null
+      let plus = number > 0 ? number : 0;
       const documentId = `${name} +${plus}`;
       const guestDocRef = doc(collection(db, "gosti"), documentId);
       const allGuests = [name, ...guests];
@@ -52,7 +50,7 @@ function App() {
         });
         console.log("Document written with ID: ", docRef);
         alert("ХВАЛА НА ВАШОЈ ПОТВРДИ. ВИДИМО СЕ 30. ЈУНА");
-        setAttending(false);
+        setAttending(true);
         setGuests("");
         setName("");
         setNumber(0);
@@ -63,8 +61,12 @@ function App() {
     }
   };
 
-  const openMapa = () => {
-    const url = "https://maps.app.goo.gl/rrsJMMFSgBBWg7sT6";
+  const urlRestoran = "https://maps.app.goo.gl/rrsJMMFSgBBWg7sT6";
+  const urlNovaPazova = "https://maps.app.goo.gl/rH9dKEA2zSrj57b96";
+  const urlSremcica = "https://maps.app.goo.gl/Nq3hWG3tEQr6H9ncA";
+  const urlCrvka = "https://maps.app.goo.gl/DYdF2NskiJMg5yE56";
+
+  const openMapa = (url) => {
     window.open(url, "_blank").catch((err) => {
       console.error("Ne može se otvoriti mapa:", err);
     });
@@ -73,13 +75,27 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="title"></div>
+        <div className="title">
+        </div>
         <div className="date"></div>
+        <div className="svatovi">
+          <div className="mapaNp" onClick={() => openMapa(urlNovaPazova)}></div>
+          <div className="mapaSr" onClick={() => openMapa(urlSremcica)}></div>
+          <div className="mapaCr" onClick={() => openMapa(urlCrvka)}></div>
+        </div>
+        <div className="divider">
+          <p className="poruka">
+            Поделимо радост као што делимо снове.<br></br>Ваше присуство чини
+            наше венчање потпуним.
+          </p>
+        </div>
         <div className="restoran">
-          <div className="mapa" onClick={openMapa}></div>
+          <div className="mapa" onClick={() => openMapa(urlRestoran)}></div>
         </div>
         <div className="formWrapper">
-          <h1 className="formTitle">Потврда доласка</h1>
+          <h1 className="formTitle">
+            Потврда доласка
+          </h1>
 
           <p></p>
 
@@ -127,7 +143,7 @@ function App() {
                   ))}
                 </div>
               )}
-              {number > 0 ? `+${number}` : "Само ја"}
+              {number > 0 ? `+${number}` : "-"}
             </div>
             <div className="optionText">
               Изабери из падајућег менија одговарајућу опцију
@@ -140,7 +156,7 @@ function App() {
               rows={4}
               cols={40}
               className="input"
-              value={guests ? guests?.join("\n") : ''}
+              value={guests ? guests?.join("\n") : ""}
               onChange={(e) => {
                 const lines = e.target.value.split("\n");
                 setGuests(lines);
@@ -154,13 +170,15 @@ function App() {
         <div className="molbaWrapper">
           <p className="molba">
             Молимо Вас да потврдите Ваше присуство попуњавањем обрасца или да
-            нам се јавите до <br></br>15. јуна 2024.<br></br> Ваши, Весна и
-            Милан.
+            нам се јавите до <br></br>15. јуна 2024. године.<br></br> Ваши,
+            Весна и Милан.
           </p>
         </div>
       </div>
       <div className="footer">
-        <p className="footerText">Породице Ераковић и Ракић</p>
+        <p className="footerText">
+          Породице<br></br>Ераковић и Ракић
+        </p>
       </div>
     </>
   );
